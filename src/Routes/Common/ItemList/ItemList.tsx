@@ -58,7 +58,7 @@ export default class ItemList extends React.Component{
               }}>No Items</Text>
             )}
             {this.state.itemList && this.state.itemList.map((element, index) => {
-                return <ItemCard {...this.props} key={index} style={{marginLeft:5, marginRight:5, marginBottom:5}} data={element} viewItemCallback={this.viewItem}  />
+                return <ItemCard {...this.props} key={index} style={{marginLeft:8, marginRight:5, marginBottom:5}} data={element} viewItemCallback={this.viewItem}  />
             })}
             </View>
           </>)

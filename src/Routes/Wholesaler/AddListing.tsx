@@ -240,7 +240,8 @@ export class CreateListing extends React.Component {
 
   listingEntryTemplate = (props) => {
 
-    return (<Card>
+    return (
+    <Card>
       <Card.Header title="Listing Information"  />
       <CardBody>
         <List>
@@ -330,8 +331,8 @@ export class CreateListing extends React.Component {
       </>
     );
     return (
-      <>
-        <ScrollView>
+      <View style={{borderTopColor: '#f7601b', borderColor: '#00000000', borderWidth: 3}}>
+        <ScrollView style={{backgroundColor: '#ddd'}}>
           {/* <Modal transparent={false}  visible={this.state.viewGallery} onClose={()=>this.setState({viewGallery:false})}> */}
           {/* <View> */}
           <ImageGallery
@@ -341,8 +342,8 @@ export class CreateListing extends React.Component {
           />
           <WingBlank>
             <WhiteSpace size="lg" />
-            <Button onPress={()=>console.log(this.state)}>Debug Log</Button>
-            <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+            <Button style={{backgroundColor: '#333', borderColor: '#777'}} onPress={()=>console.log(this.state)}><Text style={{color: '#ddd'}}>Debug Log</Text></Button>
+            <Text style={{ fontSize: 18, fontWeight: "bold", color: '#ddd' }}>
               In order to validate your entry, we require you to at least submit
               the required information of each category.{" "}
             </Text>
@@ -365,8 +366,6 @@ export class CreateListing extends React.Component {
               </Steps>
             </ScrollView>
 
-            <Text style={{textAlign:'center',fontWeight:'bold', fontSize:18}} >{steps[this.state.step+1].title}</Text>
-
             {steps.map((entry, index) => {
               console.log(entry)
               if (entry.type == "images" && index - 1 == this.state.step) {
@@ -386,7 +385,7 @@ export class CreateListing extends React.Component {
             <WhiteSpace size="lg"/>
 
             { this.state.step+1 < steps.length && steps[this.state.step+1].type=='images' && (
-              <Flex>
+            <Flex>
               <Flex.Item>
                 <Button onPress={() => this.launchImagePicker(steps[this.state.step+1])}>
                   Add Image(s)
@@ -400,8 +399,6 @@ export class CreateListing extends React.Component {
             </Flex>
             ) }
 
-            <WhiteSpace size="lg"/>
-            <WhiteSpace size="lg"/>
 
             <View style={{ alignContent: "flex-end" }}>
               <Flex>
@@ -456,11 +453,17 @@ export class CreateListing extends React.Component {
           {/* <Button onPress={()=>this.capture()} >CaptureTest</Button> */}
           <WhiteSpace size="lg" />
           <WhiteSpace size="lg" />
-          <WhiteSpace size="lg" />
-                        {/* Modal Area */}
-                        <Modal visible={this.state.isSubmittingData} closable={false} ><Text><ActivityIndicator/> Submitting Data...</Text></Modal>
+          {/* Modal Area */}
+          <Modal visible={this.state.isSubmittingData} closable={false} ><Text><ActivityIndicator/> Submitting Data...</Text></Modal>
         </ScrollView>
-      </>
+            <WhiteSpace size="lg"/>
+            <WhiteSpace size="lg"/>
+        <ScrollView style={{backgroundColor: '#000'}}>
+          <WingBlank>
+            <Text style={{textAlign:'center',fontWeight:'bold', fontSize:18}} >{steps[this.state.step+1].title}</Text>
+          </WingBlank>
+        </ScrollView>
+      </View>
     );
   }
 }

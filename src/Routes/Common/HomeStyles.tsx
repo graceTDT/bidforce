@@ -23,7 +23,9 @@ export const HomeStyles = StyleSheet.create({
     // backgroundColor: '#EEE',
   },
   flexibleGrid: {
-    flex:1, flexDirection:'row',flexWrap:'wrap',
+    flex:1, 
+    flexDirection:'row',
+    flexWrap:'wrap',
   },
   flexibleRow:{
     flexDirection:'row'
@@ -31,6 +33,7 @@ export const HomeStyles = StyleSheet.create({
   listingCards:{
     marginLeft:10,
     fontWeight:'bold',
+    color: '#ddd'
   },
   listingCardsDesc:{
     fontWeight:'normal',

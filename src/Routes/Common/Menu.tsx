@@ -180,7 +180,7 @@ class MenuScreen extends Component {
                     <Text style={profileStyles.listItem}>User Management</Text>
                     <Text style={profileStyles.listItemSubtitle}>
                       Tap to create, edit, view or update Users.
-                    </Text>
+                    </Text> 
                   </List.Item>
 
                   <List.Item style={profileStyles.list}

@@ -1,4 +1,4 @@
-# Wholesale App
+# BidForce App
 
 
 ## Application Development Requirements

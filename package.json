@@ -1,6 +1,6 @@
 {
   "name": "BidForce",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "start": "expo start --dev-client",
     "android": "expo run:android",
@@ -13,7 +13,6 @@
     "@mindinventory/react-native-tab-bar-interaction": "^2.2.3",
     "@react-native-async-storage/async-storage": "1.17.11",
     "@react-native-camera-roll/camera-roll": "^5.2.4",
-    "@react-native-community/cameraroll": "^4.1.2",
     "@react-native-community/cli": "^10.2.1",
     "@react-native-community/segmented-control": "^2.2.2",
     "@react-native-community/slider": "4.4.2",
@@ -38,7 +37,7 @@
     "moment": "^2.29.4",
     "object-assign": "^4.1.1",
     "react": "18.2.0",
-    "react-native": "0.71.3",
+    "react-native": "0.71.5",
     "react-native-dotenv": "^3.3.1",
     "react-native-eject": "^0.2.0",
     "react-native-elements": "^3.4.2",

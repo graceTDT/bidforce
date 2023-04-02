@@ -125,18 +125,16 @@ export class Dashboard extends React.Component {
         {/* <Button onPress={() => this.props.navigation.navigate('notifications')} ></Button> */}
         <WingBlank>
           <WhiteSpace size="lg"/>
-          <Text style={{fontSize:20, fontWeight:'bold'}}>What's New?</Text>
+          <Text style={{fontSize:20, fontWeight:'bold', backgroundColor: '#000', padding: 10, color: '#eee'}}>What's New?</Text>
           <WhiteSpace size="lg"/>
           <RefreshControl refreshing={this.state.isLoading} onRefresh={()=>{
             this.setState({isLoading:true})
             this.props.getListings()}}>
-            <View>
-              <Image source={logo} style={styles.bottomlogo}/>
-            </View>
-            <ScrollView style={{height:'100%'}}>
-              <ItemList itemList={this.state.items}  navigation={this.props.navigation}/>
+            <ScrollView style={{paddingTop: 10, backgroundColor: '#000'}}>
+              <ItemList itemList={this.state.items} navigation={this.props.navigation}/>
             </ScrollView>
           </RefreshControl>
+            <Image source={logo} style={styles.bottomlogo}/>
         </WingBlank>
     </SafeAreaView>)
   }
@@ -162,12 +160,11 @@ const styles = StyleSheet.create({
     height: 30,
   },
   bottomlogo: {
-    position: 'absolute',
-    aspectRatio: 1,
-    resizeMode: 'contain',
-    height: 300,
-    bottom: 0,
-    opacity: 0.5
+    resizeMode: 'stretch',
+    width: 330,
+    height: 110,
+    opacity: 0.5,
+    padding: 0
   },
   button: {
     borderRadius: 20,

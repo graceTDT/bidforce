@@ -66,7 +66,7 @@ export default class ItemCard extends React.Component<inputs> {
         return (
             <TouchableOpacity onPress={() => this.viewItem()} style={this.style}>
                 
-                <Card style={{ width: 150 }}>
+                <Card style={{ width: 150, backgroundColor: '#111', borderColor: '#444'}}>
                     <Card.Header
                         style={HomeStyles.notificationBody}
                         title={
@@ -84,18 +84,18 @@ export default class ItemCard extends React.Component<inputs> {
                                         top:0, left:0, right:0, bottom:0, justifyContent:'center',alignItems:'center', alignSelf:'center', marginTop:30, marginLeft:10,
                                         }}>{data.status == "PENDING" ? "Pending" : "Hidden"}</Text>
                                 )}
-                                </ImageBackground>
+                            </ImageBackground>
                             </>
                         }
                     />
-                    <Card.Body>
+                    <Card.Body style={{borderTopColor: '#444'}}>
                         <Text style={HomeStyles.listingCards}>
                             {data.name}
                         </Text>
                         <Text style={[HomeStyles.listingCards, HomeStyles.listingCardsDesc]}>
                             {data.make_of_vehicle}
                         </Text>
-                        <Text style={{ alignSelf: 'flex-end', marginRight: 10 }}>
+                        <Text style={{ alignSelf: 'flex-end', marginRight: 10, color: '#aaa' }}>
                             {moment(new Date(data.created_at)).fromNow()}
                         </Text>
                     </Card.Body>
