@@ -331,7 +331,7 @@ export class CreateListing extends React.Component {
       </>
     );
     return (
-      <View style={{borderTopColor: '#f7601b', borderColor: '#00000000', borderWidth: 3}}>
+      <View style={{borderTopColor: '#f7601b', borderColor: '#00000000', borderWidth: 3, borderLeftWidth: 0, borderRightWidth: 0}}>
         <ScrollView style={{backgroundColor: '#ddd'}}>
           {/* <Modal transparent={false}  visible={this.state.viewGallery} onClose={()=>this.setState({viewGallery:false})}> */}
           {/* <View> */}
@@ -343,7 +343,7 @@ export class CreateListing extends React.Component {
           <WingBlank>
             <WhiteSpace size="lg" />
             <Button style={{backgroundColor: '#333', borderColor: '#777'}} onPress={()=>console.log(this.state)}><Text style={{color: '#ddd'}}>Debug Log</Text></Button>
-            <Text style={{ fontSize: 18, fontWeight: "bold", color: '#ddd' }}>
+            <Text style={{ fontSize: 18, fontWeight: "bold", color: '#111' }}>
               In order to validate your entry, we require you to at least submit
               the required information of each category.{" "}
             </Text>
@@ -365,7 +365,15 @@ export class CreateListing extends React.Component {
                 <Steps.Step title={"Summary"} />
               </Steps>
             </ScrollView>
-
+          </WingBlank>
+        </ScrollView>
+        <ScrollView style={{backgroundColor: '#000', marginTop: 10, padding: 7}}>
+          <WingBlank>
+            <Text style={{textAlign:'center', color: '#ddd', fontWeight:'bold', fontSize:18}} >{steps[this.state.step+1].title}</Text>
+          </WingBlank>
+        </ScrollView>
+        <ScrollView style={{marginTop: 10}}>
+          <WingBlank>
             {steps.map((entry, index) => {
               console.log(entry)
               if (entry.type == "images" && index - 1 == this.state.step) {
@@ -385,14 +393,14 @@ export class CreateListing extends React.Component {
             <WhiteSpace size="lg"/>
 
             { this.state.step+1 < steps.length && steps[this.state.step+1].type=='images' && (
-            <Flex>
+            <Flex style={{marginBottom: 12}}>
               <Flex.Item>
-                <Button onPress={() => this.launchImagePicker(steps[this.state.step+1])}>
+                <Button style={{marginRight: 5}} onPress={() => this.launchImagePicker(steps[this.state.step+1])}>
                   Add Image(s)
                 </Button>
               </Flex.Item>
               <Flex.Item>
-                <Button onPress={() => this.launchCamera(steps[this.state.step+1])}>
+                <Button style={{marginLeft: 5}} onPress={() => this.launchCamera(steps[this.state.step+1])}>
                   Take a picture
                 </Button>
               </Flex.Item>
@@ -403,7 +411,7 @@ export class CreateListing extends React.Component {
             <View style={{ alignContent: "flex-end" }}>
               <Flex>
                 <Flex.Item>
-                  <Button
+                  <Button  style={{marginRight: 5}}
                     type="ghost"
                     disabled={this.state.step == -1}
                     onPress={() => {
@@ -420,6 +428,7 @@ export class CreateListing extends React.Component {
                 <Flex.Item>
                   {this.state.step < 6 && (
                     <Button
+                      style={{marginLeft: 5}}
                       type="primary"
                       onPress={() => {
                         if (this.state.step < 6)
@@ -456,17 +465,15 @@ export class CreateListing extends React.Component {
           {/* Modal Area */}
           <Modal visible={this.state.isSubmittingData} closable={false} ><Text><ActivityIndicator/> Submitting Data...</Text></Modal>
         </ScrollView>
-            <WhiteSpace size="lg"/>
-            <WhiteSpace size="lg"/>
-        <ScrollView style={{backgroundColor: '#000'}}>
-          <WingBlank>
-            <Text style={{textAlign:'center',fontWeight:'bold', fontSize:18}} >{steps[this.state.step+1].title}</Text>
-          </WingBlank>
-        </ScrollView>
       </View>
     );
   }
 }
+const stepStyle = {
+  marginBottom: 60,
+  boxShadow: '0px -1px 0 0 #e8e8e8 inset',
+  color: '#fff'
+};
 
 const styles = StyleSheet.create({
   container: {
